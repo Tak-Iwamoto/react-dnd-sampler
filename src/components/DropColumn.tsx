@@ -16,7 +16,7 @@ type Props = {
 
 export const Column: VFC<Props> = ({ colNumber, backgroundColor }) => {
   const [, drop] = useDrop({
-    accept: DnDItems.Column,
+    accept: DnDItems.Todo,
     drop: () => ({ colNumber }),
   });
 
@@ -27,6 +27,7 @@ export const Column: VFC<Props> = ({ colNumber, backgroundColor }) => {
       ref={drop}
       className={`flex justify-center items-center h-96 w-48 ${backgroundColor}`}
     >
+      {/* ドロップされた場合はドラッグしたコンポーネントを表示 */}
       {isDropped && <DraggableItem name='Drag Item' />}
     </div>
   );

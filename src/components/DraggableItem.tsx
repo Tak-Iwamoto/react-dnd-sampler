@@ -14,7 +14,7 @@ export const DraggableItem: VFC<Props> = ({ name }) => {
 
   const [collected, drag] = useDrag({
     item: {
-      type: DnDItems.Column,
+      type: DnDItems.Todo,
     },
     end: (_, monitor) => {
       const dropResult = monitor.getDropResult() as DropResult;
