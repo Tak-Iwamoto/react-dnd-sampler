@@ -6,7 +6,7 @@ import { DraggableItem } from './DraggableItem';
 import { DnDItems } from '../dnd/DnDItem';
 
 export type DropResult = {
-  columnNumber: number;
+  colNumber: number;
 };
 
 type Props = {
@@ -17,7 +17,7 @@ type Props = {
 export const Column: VFC<Props> = ({ colNumber, backgroundColor }) => {
   const [, drop] = useDrop({
     accept: DnDItems.Column,
-    drop: () => ({ columnNumber: colNumber }),
+    drop: () => ({ colNumber }),
   });
 
   const isDropped = useRecoilValue(droppedColumnState) === colNumber;

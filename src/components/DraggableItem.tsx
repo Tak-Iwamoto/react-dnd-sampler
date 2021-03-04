@@ -19,7 +19,7 @@ export const DraggableItem: VFC<Props> = ({ name }) => {
     end: (_, monitor) => {
       const dropResult = monitor.getDropResult() as DropResult;
       if (dropResult) {
-        setDroppedColumnNumber(dropResult.columnNumber);
+        setDroppedColumnNumber(dropResult.colNumber);
       }
     },
     collect: (monitor) => {
