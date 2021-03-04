@@ -1,20 +1,13 @@
 import { AppProps } from 'next/app';
-import { RecoilRoot } from 'recoil';
 import { DndProvider } from 'react-dnd';
 import { HTML5Backend } from 'react-dnd-html5-backend';
-import 'tailwindcss/tailwind.css';
+import { RecoilRoot } from 'recoil';
+import "tailwindcss/tailwind.css"
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <RecoilRoot>
-      <DndProvider
-        backend={HTML5Backend}
-        options={{
-          enableTouchEvents: true,
-          enableMouseEvents: true,
-          enableHoverOutsideTarget: true,
-        }}
-      >
+      <DndProvider backend={HTML5Backend}>
         <Component {...pageProps} />
       </DndProvider>
     </RecoilRoot>

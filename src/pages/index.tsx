@@ -1,8 +1,19 @@
-import Link from 'next/link';
+import { Column } from '../components/Column';
 
 const IndexPage = () => (
-  <div className=''>
-    <Link href='/sort'>users</Link>
+  <div className='grid grid-cols-3 justify-center items-center place-items-center'>
+    <div>todo</div>
+    <div>done</div>
+    <div>wip</div>
+    <div>
+      <Column colNumber={1} backgroundColor='bg-yellow-300' />
+    </div>
+    <div>
+      <Column colNumber={2} backgroundColor='bg-red-300' />
+    </div>
+    <div>
+      <Column colNumber={3} backgroundColor='bg-blue-300' />
+    </div>
   </div>
 );
 
