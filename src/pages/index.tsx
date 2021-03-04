@@ -1,4 +1,4 @@
-import { Column } from '../components/Column';
+import { Column } from '../components/DropColumn';
 
 const IndexPage = () => (
   <div className='grid grid-cols-3 justify-center items-center place-items-center'>

@@ -1,9 +1,9 @@
 import React, { VFC } from 'react';
 import { useDrop } from 'react-dnd';
 import { useRecoilValue } from 'recoil';
-import { droppedColumnState } from '../recoil/atom/dropColumn';
-import { DraggableItem } from './Draggable';
-import { DnDItems } from './Item';
+import { droppedColumnState } from '../recoil/dropColumn';
+import { DraggableItem } from './DraggableItem';
+import { DnDItems } from '../dnd/DnDItem';
 
 export type DropResult = {
   columnNumber: number;

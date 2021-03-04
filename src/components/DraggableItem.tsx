@@ -1,16 +1,16 @@
 import { VFC } from 'react';
 import { useDrag } from 'react-dnd';
 import { useRecoilState } from 'recoil';
-import { droppedColumnState } from '../recoil/atom/dropColumn';
-import { DropResult } from './Column';
-import { DnDItems } from './Item';
+import { droppedColumnState } from '../recoil/dropColumn';
+import { DropResult } from './DropColumn';
+import { DnDItems } from '../dnd/DnDItem';
 
 type Props = {
   name: string;
 };
 
 export const DraggableItem: VFC<Props> = ({ name }) => {
-  const [, setDroppedColumn] = useRecoilState(droppedColumnState);
+  const [, setDroppedColumnNumber] = useRecoilState(droppedColumnState);
 
   const [collected, drag] = useDrag({
     item: {
@@ -19,7 +19,7 @@ export const DraggableItem: VFC<Props> = ({ name }) => {
     end: (_, monitor) => {
       const dropResult = monitor.getDropResult() as DropResult;
       if (dropResult) {
-        setDroppedColumn(dropResult.columnNumber);
+        setDroppedColumnNumber(dropResult.columnNumber);
       }
     },
     collect: (monitor) => {
